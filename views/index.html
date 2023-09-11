@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroína</title>
+</head>
+<body>
+    {% if universo == "dc" and heroi == "batman" %}
+        O universo escolhido é {{ universo }}.<br>
+        O héroi escolhido é {{ heroi }}.<br>
+        <img src="{{ url_for('static', filename='batma.png') }}" width="200"><br>
+    {% elif universo == "dc" and heroi != "batman" %}
+        O universo escolhido é {{ universo }}.<br>
+        O héroi escolhido é {{ heroi }}.<br>
+        Não temos uma imagem dele.
+
+    {% elif universo == "marvel" and heroi == "hulkao" %}
+        O universo escolhido é {{ universo }}.<br>
+        O héroi escolhido é {{ heroi }}.<br>
+        <img src="{{ url_for('static', filename='hulkao.png') }}" width="200"><br>
+
+    {% elif universo == "marvel" and heroi != "hulkao" %}
+        O universo escolhido é {{ universo }}.<br>
+        O héroi escolhido é {{ heroi }}.<br>
+        Não temos uma imagem dele.
+
+    {% else %}
+        Sou burro, isso não existe '-'
+    {% endif %}
+
+</body>
+</html>
